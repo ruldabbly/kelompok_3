@@ -1,0 +1,316 @@
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: absolute;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-image: linear-gradient(-45deg, red, blue);
+    overflow: hidden;
+}
+/* input[type="checkbox"] {
+    display: block;
+}
+.login button {
+    width: 250px;
+    height: 50px;
+    outline: none;
+    border: 3px solid rgba(255, 255, 255, .5);
+    box-shadow: 2px 2px 5px #fff;
+    background: transparent;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    transition: 0.3s;
+    position: absolute;
+    display: none;
+}
+.login button#btn-login:active {
+    font-size: inherit;
+    width: 200px;
+    height: 40px;
+}
+.login button#btn-login span {
+    pointer-events: none;
+} */
+
+/* ANIMASI */
+input[type="checkbox"]#slide:checked ~ .login-content {
+    display: flex;
+    opacity: 0;
+    z-index: 1;
+    transition: .3s;
+    transition-delay: .2s;
+    transform: rotateY(180deg);
+}
+input[type="checkbox"]#slide:checked ~ .regist-content {
+    display: flex;
+    transition: .3s;
+    transition-delay: .2s;
+    transform: rotateY(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* STYLE LOGIN */
+
+input[type="checkbox"]#slide {
+    display: none;
+}
+.login-content {
+    width: 40%;
+    height: 500px;
+    color: #fff;
+    display: flex; /* disini */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
+    transition-delay: 0.2s;
+    z-index: 99;
+}
+.content {
+    width: 40%;
+    height: 85%;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+h1 {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+}
+.form {
+    width: 100%;
+    position: relative;
+    top: 80px;
+    box-sizing: border-box;
+}
+.user,
+.pass {
+    margin: 40px 0;
+    position: relative;
+}
+.user #user,
+.pass #pass {
+    width: 100%;
+    height: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 18px;
+    color: #fff;
+    padding: 0 10px;
+    font-weight: 200;
+}
+label.user-label,
+label.pass-label {
+    font-size: 20px;
+    position: absolute;
+    top: 7px;
+    color: rgba(255, 255, 255, 0.5);
+    left: 10px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+input[type="text"]:focus ~ label.user-label,
+input[type="text"]:valid ~ label.user-label,
+input[type="password"]:focus ~ label.pass-label,
+input[type="password"]:valid ~ label.pass-label {
+    top: -25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+.terms-pass {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
+    font-size: 17px;
+}
+.terms label[for="check"] {
+    left: 35px;
+    transform: translateY(3px);
+    position: absolute;
+}
+.terms-reg label[for="check-reg"] {
+    position: absolute;
+    left: 35px;
+    transform: translateY(3px);
+}
+span.fpass {
+    font-weight: 550;
+}
+span.fpass:active {
+    text-decoration: underline;
+}
+input[type="checkbox"]#check,
+input[type="checkbox"]#check-reg {
+    transform: translateY(3px);
+    display: block;
+    accent-color: rgba(188, 188, 188, 0.2);
+}
+button#login,
+button#register {
+    width: 100%;
+    position: absolute;
+    height: 45px;
+    bottom: -33px;
+    border: none;
+    background: rgba(225, 255, 255, 0.5);
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+span.no {
+    display: block;
+    width: 100%;
+    text-align: center;
+    transform: translateY(90px);
+    font-size: 18px;
+}
+span.no label {
+    font-weight: 600;
+}
+/* span.no label:active,
+span.yes label:active {
+    text-decoration: underline;
+} */
+
+/* STYLE REGISTRATION */
+
+.regist-content {
+    width: 40%;
+    height: 680px;
+    color: #fff;
+    display: flex; /* disini */
+    justify-content: center;
+    transform: rotateY(180deg);
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
+    transition-delay: 0.2s;
+}
+.content {
+    width: 80%;
+    height: 85%;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+h1 {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+}
+/* h1:hover {
+    color: red;
+} */
+.form {
+    width: 100%;
+    position: relative;
+    top: 80px;
+    box-sizing: border-box;
+}
+.name,
+.mail,
+.pass,
+.conf-pass {
+    margin: 40px 0;
+    position: relative;
+}
+.name #name,
+.mail #mail,
+.pass #pass,
+.conf-pass #conf-pass {
+    width: 100%;
+    height: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 18px;
+    color: #fff;
+    padding: 0 10px;
+    font-weight: 200;
+}
+label.name-label,
+label.mail-label,
+label.pass-label,
+label.conf-pass-label {
+    font-size: 20px;
+    position: absolute;
+    top: 7px;
+    color: rgba(255, 255, 255, 0.5);
+    left: 10px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+input[type="text"]:focus ~ label.name-label,
+input[type="text"]:valid ~ label.name-label,
+input[type="mail"]:focus ~ label.mail-label,
+input[type="mail"]:valid ~ label.mail-label,
+input[type="password"]:focus ~ label.pass-label,
+input[type="password"]:valid ~ label.pass-label,
+input[type="password"]:focus ~ label.conf-pass-label,
+input[type="password"]:valid ~ label.conf-pass-label {
+    top: -25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+span.yes {
+    display: block;
+    width: 100%;
+    text-align: center;
+    transform: translateY(95px);
+    font-size: 18px;
+}
+span.yes label {
+    font-weight: 600;
+}
+span.yes label:hover,
+span.no label:hover {
+    text-decoration: underline;
+}
+em:nth-child(1):active,
+em:nth-child(2):active {
+    text-decoration: underline;
+}
